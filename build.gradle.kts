@@ -18,7 +18,7 @@ allprojects {
         maven("https://maven.terraformersmc.com/releases")
         maven("https://jitpack.io") {
             content {
-                includeGroup("com.github.Oryxel")
+                includeGroup("com.github.oryxel1")
             }
         }
     }
@@ -48,12 +48,12 @@ dependencies {
     testImplementation("net.fabricmc:fabric-loader-junit:${property("fabric_loader_version")}")
     modCompileOnly("com.terraformersmc:modmenu:14.0.0-rc.2")
 
-    jij("net.raphimc:MinecraftAuth:4.1.1") {
+    jij("net.raphimc:MinecraftAuth:4.1.2") {
         exclude(group = "com.google.code.gson", module = "gson")
         exclude(group = "org.slf4j", module = "slf4j-api")
     }
-    jij("net.lenni0451:Reflect:1.5.0")
-    jij("org.cloudburstmc.netty:netty-transport-raknet:1.0.0.CR3-SNAPSHOT") {
+    jij("net.lenni0451:Reflect:1.6.0")
+    jij("dev.kastle.netty:netty-transport-raknet:1.4.0") {
         exclude(group = "io.netty")
     }
     jij("de.florianmichael:Classic4J:2.1.1-SNAPSHOT")
@@ -63,17 +63,17 @@ includeTransitiveJijDependencies()
 
 fun Project.configureVVDependencies(configuration: String) {
     dependencies {
-        configuration("com.viaversion:viaversion-common:5.4.1-20250620.234812-2")
-        configuration("com.viaversion:viabackwards-common:5.4.0")
-        configuration("com.viaversion:viaaprilfools-common:4.0.2")
-        configuration("com.viaversion:vialoader:4.0.3") {
+        configuration("com.viaversion:viaversion-common:5.5.2-SNAPSHOT")
+        configuration("com.viaversion:viabackwards-common:5.5.2-SNAPSHOT")
+        configuration("com.viaversion:viaaprilfools-common:4.0.6-SNAPSHOT")
+        configuration("com.viaversion:vialoader:4.0.5") {
             exclude(group = "com.google.guava", module = "guava")
             exclude(group = "org.slf4j", module = "slf4j-api")
         }
-        configuration("net.raphimc:ViaLegacy:3.0.10")
-        configuration("net.raphimc:ViaBedrock:0.0.18-20250620.232050-1") {
-            exclude(group = "io.jsonwebtoken")
+        configuration("net.raphimc:ViaLegacy:3.0.11")
+        configuration("net.raphimc:ViaBedrock:0.0.22-SNAPSHOT") {
             exclude(group = "com.mojang", module = "brigadier")
+            exclude(group = "io.netty")
         }
     }
 }
